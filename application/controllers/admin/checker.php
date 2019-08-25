@@ -38,4 +38,8 @@ class Checker extends CI_Controller {
 	{
 		$this->load->view('admin/edu_checker');
 	}
+	public function participantList()
+	{
+		$this->load->view('admin/participant_list');
+	}
 }

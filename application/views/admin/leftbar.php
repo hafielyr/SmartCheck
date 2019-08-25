@@ -33,11 +33,11 @@
           </span>
         </a>
         <ul class="treeview-menu">
-          <li><a href="index.html"><i class="fa fa-circle-o"></i> Jobs </a></li>
+          <li><a href="../home"><i class="fa fa-circle-o"></i> Recruitments </a></li>
           <li><a href="index2.html"><i class="fa fa-circle-o"></i> Candidates </a></li>
-          <li><a href="checker/socialMediaCheck"><i class="fa fa-circle-o"></i> Social Media Check </a></li>
-          <li><a href="checker/eduCheck"><i class="fa fa-circle-o"></i> Education Check </a></li>
-          <li><a href="checker/ltcriminalCheck"><i class="fa fa-circle-o"></i> Civil Litigation/Criminal Check </a></li>
+          <li><a href="socialMediaCheck"><i class="fa fa-circle-o"></i> Social Media Check </a></li>
+          <li><a href="eduCheck"><i class="fa fa-circle-o"></i> Education Check </a></li>
+          <li><a href="ltcriminalCheck"><i class="fa fa-circle-o"></i> Civil Litigation/Criminal Check </a></li>
         </ul>
       </li>
       <li>
