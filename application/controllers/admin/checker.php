@@ -67,4 +67,8 @@ class Checker extends CI_Controller {
 
 		return json_decode($json,true);	
 	}
+	public function participantList()
+	{
+		$this->load->view('admin/participant_list');
+	}
 }
