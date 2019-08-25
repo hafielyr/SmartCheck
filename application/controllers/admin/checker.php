@@ -81,7 +81,7 @@ class Checker extends CI_Controller {
 	{
 		if(file_exists($file) and !$refresh)
 		{
-			$json = file_get_contents($file);	
+			$json = file_get_contents($file);
 		}
 		else{			
 			$json = file_get_contents($url);			
@@ -89,13 +89,16 @@ class Checker extends CI_Controller {
 			$fp = fopen($file, 'w');
 			fwrite($fp, $json);
 			fclose($fp);
-			$json = file_get_contents($file);	
+			$json = file_get_contents($file);
 		}
 
-		return json_decode($json,true);	
+		return json_decode($json,true);
 	}
 	public function participantList()
 	{
 		$this->load->view('admin/participant_list');
+	}
+	public function singleChecking(){
+    $this->load->view('admin/single_checking');
 	}
 }

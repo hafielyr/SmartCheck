@@ -28,124 +28,198 @@ test
 
       <!-- Main row -->
       <div class="row">
-        <?php $json = file_get_contents(__DIR__ . '/../../json/mendikbud.json');
-              $data = json_decode($json,true);
+        <?php
+             $servername = "localhost";
+             $username = "root";
+             $password = "";
+             $dbname = "smartcheck";
+
+             // Create connection
+             $conn = new mysqli($servername, $username, $password, $dbname);
+             // Check connection
+             if ($conn->connect_error) {
+              die("Connection failed: " . $conn->connect_error);
+            }
+
+?>
+        <?php
+        // keys and tokens
+        $consumer_key = '0CMWq5J8RYC90BcRwdTWxxrPp';
+        $consumer_secret = 'Fe7TPG8EjxX8wPV3iMY5lKHm5IYo90aQv5oeRX3pMopqrhYmwU';
+        $access_token = '285026167-BnLnNmohZbejpGUnQddVbNbQFddwM8nXN0lm21om';
+        $access_token_secret = 'CR4fh421Zk4QrQQGuNi3TSYXEmk6dCpBgD4mGYLv7uh7E';
+
+        //include library
+        require __DIR__ . '/../../../assets/twitteroauth/autoload.php';
+        use Abraham\TwitterOAuth\TwitterOAuth;
+
+        // connect to API
+        $connection = new TwitterOAuth($consumer_key, $consumer_secret, $access_token, $access_token_secret);
+        $content = $connection->get("account/verify_credentials");
+
+        //Get tweets
+        $user= $connection->get("users/show",["screen_name"=>"permadiaktivis"]);
+        $statuses = $connection->get("statuses/user_timeline",["screen_name"=>"permadiaktivis","count"=>200,"include_rts"=>1,"tweet_mode"=>"extended","truncated"=>"false"]);
+        $statuses_json = json_encode($statuses);
+        //print_r($statuses_json);
+        //print_r($user);
+        //echo '<br>';
+        echo '
+        <div class="col-md-8">
+          <!-- Widget: user widget style 1 -->
+          <div class="box box-widget widget-user" >
+            <!-- Add the bg color to the header using any of the bg-* classes -->
+            <div class="widget-user-header bg-black" style="background: url('.$user->profile_banner_url.') center center;">
+              <h3 class="widget-user-username">'.$user->screen_name.'</h3>
+              <h5 class="widget-user-desc">'.$user->name.'</h5>
+            </div>
+            <div class="widget-user-image">
+              <img class="img-circle" src="'.$user->profile_image_url.'" alt="User Avatar">
+            </div>
+            <div class="box-footer">
+              <div class="row">
+                <div class="col-sm-4 border-right">
+                  <div class="description-block">
+                    <h5 class="description-header">'.$user->friends_count.'</h5>
+                    <span class="description-text">Following</span>
+                  </div>
+                  <!-- /.description-block -->
+                </div>
+                <!-- /.col -->
+                <div class="col-sm-4 border-right">
+                  <div class="description-block">
+                    <h5 class="description-header">'.$user->followers_count.'</h5>
+                    <span class="description-text">Followers</span>
+                  </div>
+                  <!-- /.description-block -->
+                </div>
+                <!-- /.col -->
+                <div class="col-sm-4">
+                  <div class="description-block">
+                    <h5 class="description-header">'.$user->statuses_count.'</h5>
+                    <span class="description-text">Tweets</span>
+                  </div>
+                  <!-- /.description-block -->
+                </div>
+                <!-- /.col -->
+              </div>
+              <!-- /.row -->
+            </div>
+          </div>
+          <!-- /.widget-user -->
+        </div>';
         ?>
 
         <div class="col-md-8">
-          <!-- TABLE: LATEST ORDERS -->
-          <div class="box box-info">
-            <div class="box-header with-border">
-              <h3 class="box-title">Status</h3>
+          <div class="box">
+            <div class="box-header">
 
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                </button>
-                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              <div class="box-tools">
+                <ul class="pagination pagination-sm no-margin pull-right">
+                  <li><a href="#">«</a></li>
+                  <li><a href="#">1</a></li>
+                  <li><a href="#">2</a></li>
+                  <li><a href="#">3</a></li>
+                  <li><a href="#">»</a></li>
+                </ul>
               </div>
             </div>
             <!-- /.box-header -->
-            <div class="box-body">
-              <div class="table-responsive">
-                <table class="table no-margin">
-                  <thead>
-                  <tr>
-                    <th>ID</th>
-                    <th>Checked Item</th>
-                    <th>Status</th>
-                    <th>Result</th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  <tr>
-                    <td><a href="pages/examples/invoice.html">EDU1147</a></td>
-                    <td>Ristekdikti </td>
-                    <td><span class="label label-success">checked</span></td>
-                    <td>
-                      <div class="sparkbar" data-color="#00a65a" data-height="20">
-                        0 Incorrect Data
-                      </div>
-                    </td>
-                  </tr>
-                  </tbody>
-                </table>
-              </div>
-              <!-- /.table-responsive -->
-            </div>
-            <!-- /.box-footer -->
-          </div>
-          <!-- /.box -->
-        </div>
-        <!-- /.col -->
+            <div class="box-body no-padding">
+              <table class="table">
+                <tbody><tr>
+                  <th>Negative tweets</th>
+                </tr>
+        <?php
+        $sql = "SELECT * FROM words";
+        $result = $conn->query($sql);
+        $rows = [];
+        while($row = mysqli_fetch_array($result))
+        {
+          $rows[] = $row;
+        }
+        $positive_tweets = 0;
+        $neutral_tweets = 0;
+        $negative_tweets = 0;
+        //print_r($statuses);
+        foreach ($statuses as $key=>$value) {
+          // Use preg_split() function
+        $str_arr = preg_split ('/[\ \n\,]+/', $value->full_text);
+        $score = 0;
+        foreach($str_arr as $str_row){
+          foreach ($rows as $word_row) {
+               if (strcasecmp($str_row, $word_row["Word"]) == 0){
+                 $score = $score + $word_row["Score"];
+               }
+          }
+        }
+        if ($score>0){$positive_tweets= $positive_tweets+1;}
+        else if ($score==0){$neutral_tweets= $neutral_tweets+1;}
+        else if ($score<-1){
+            $negative_tweets = $negative_tweets + 1;
 
-        <div class="col-md-8">
-          <!-- TABLE: LATEST ORDERS -->
-          <div class="box box-info">
-            <!-- /.box-header -->
-            <div class="box-body">
-              <div class="table-responsive">
-                <table class="table table-condensed">
-                  <thead>
-                  <tr>
-                    <th style="width: 200px">Ristekdikti</th>
-                    <th></th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  <?php echo '
-                  <tr>
-                    <td>Nama </td>
-                    <td>: '.$data['Nama'].'</td>
-                  </tr>
-                  <tr>
-                    <td>Jenis Kelamin </td>
-                    <td>: '.$data['Jenis Kelamin'].'</td>
-                  </tr>
-                  <tr>
-                    <td>Perguruan Tinggi </td>
-                    <td>: '.$data['Perguruan Tinggi'].'</td>
-                  </tr>
-                  <tr>
-                    <td>Program Studi </td>
-                    <td>: '.$data['Program Studi'].'</td>
-                  </tr>
-                  <tr>
-                    <td>Nomor Induk Mahasiswa </td>
-                    <td>: '.$data['Nomor Induk Mahasiswa'].'</td>
-                  </tr>
-                  <tr>
-                    <td>Semester Awal </td>
-                    <td>: '.$data['Semester Awal'].'</td>
-                  </tr>
-                  <tr>
-                    <td>Status Awal Mahasiswa </td>
-                    <td>: '.$data['Status Awal Mahasiswa'].'</td>
-                  </tr>
-                  <tr>
-                    <td>Status Mahasiswa Saat ini </td>
-                    <td>: '.$data['Status Mahasiswa Saat ini'].'</td>
-                  </tr>
-                  <tr>
-                    <td>Tanggal Lulus </td>
-                    <td>: '.$data['Tanggal Lulus'].'</td>
-                  </tr>
-                  <tr>
-                    <td>Nomor Ijazah </td>
-                    <td>: '.$data['Nomor Ijazah'].'</td>
-                  </tr>';
-                  ?>
-                  </tbody>
-                </table>
-              </div>
-              <!-- /.table-responsive -->
-            </div>
-            <!-- /.box-footer -->
-          </div>
-          <!-- /.box -->
-        </div>
+        if (property_exists($value, 'retweeted_status')) {
 
+           echo '<tr>
+           <td>'.$value->retweeted_status->full_text.'</td>
+           </tr>';
+         }
+          else {
+            echo '<tr>
+            <td>'.$value->full_text.'</td>
+            </tr>';
+          }
+        }
+      }
+        ?>
+           </tbody></table>
         </div>
-        <!-- /.col -->
+    <!-- /.box-body -->
+       </div>
+      </div>
+
+      <div class="col-md-4" style="padding-left : 0px; float : right;">
+       <div class="info-box bg-blue">
+             <span class="info-box-icon"><i class="ion ion-ios-plus-outline"></i></span>
+
+             <div class="info-box-content">
+               <span class="info-box-text">Positive tweets</span>
+               <span class="info-box-number"><?php echo $positive_tweets;?></span>
+
+               <div class="progress">
+                 <div class="progress-bar" style="width: 27%"></div>
+               </div>
+             </div>
+             <!-- /.info-box-content -->
+         </div>
+         <div class="info-box bg-blue">
+               <span class="info-box-icon"><i class="ion "></i></span>
+
+               <div class="info-box-content">
+                 <span class="info-box-text">Neutral</span>
+                 <span class="info-box-number"><?php echo $neutral_tweets;?></span>
+
+                 <div class="progress">
+                   <div class="progress-bar" style="width: 27%"></div>
+                 </div>
+               </div>
+               <!-- /.info-box-content -->
+           </div>
+         <div class="info-box bg-blue">
+               <span class="info-box-icon"><i class="ion ion-ios-minus-outline"></i></span>
+
+               <div class="info-box-content">
+                 <span class="info-box-text">Negative tweets</span>
+                 <span class="info-box-number"><?php echo $negative_tweets;?></span>
+
+                 <div class="progress">
+                   <div class="progress-bar" style="width: 27%"></div>
+                 </div>
+               </div>
+               <!-- /.info-box-content -->
+           </div>
+       </div>
+
       </div>
       <!-- /.row -->
     </section>
