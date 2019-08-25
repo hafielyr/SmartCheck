@@ -33,7 +33,7 @@
           </span>
         </a>
         <ul class="treeview-menu">
-          <li><a href="../home"><i class="fa fa-circle-o"></i> Recruitments </a></li>
+          <li><a href="../index.php/home"><i class="fa fa-circle-o"></i> Recruitments </a></li>
           <li><a href="index2.html"><i class="fa fa-circle-o"></i> Candidates </a></li>
           <li><a href="../index.php/socialMediaCheck"><i class="fa fa-circle-o"></i> Social Media Check </a></li>
           <li><a href="../index.php/eduCheck"><i class="fa fa-circle-o"></i> Education Check </a></li>
