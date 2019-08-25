@@ -56,5 +56,6 @@ $route['home'] = "admin/home";
 $route['socialMediaCheck'] = 'admin/checker/socialMediaCheck';
 $route['eduCheck'] = 'admin/checker/eduCheck';
 $route['ltcriminalCheck'] = 'admin/checker/ltcriminalCheck';
+$route['githubCheck'] = 'admin/checker/githubcheck';
 
 

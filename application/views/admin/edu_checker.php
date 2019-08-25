@@ -14,7 +14,7 @@
     <section class="content-header">
       <h1>
         Education Check
-        <small>applicant : Hahrul Bikmi </small>
+        <small>applicant :<?php echo $applicant_name ?></small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -56,10 +56,28 @@
                   <tr>
                     <td><a href="pages/examples/invoice.html">EDU1147</a></td>
                     <td>Ristekdikti </td>
-                    <td><span class="label label-success">checked</span></td>
+                    <?php
+                    if($valid)
+                    {
+                      echo '<td><span class="label label-success">checked</span></td>';
+                    }
+                    else{
+                      echo '<td><span class="label label-danger">invalid</span></td>';
+                    }
+                    
+                    ?>
                     <td>
                       <div class="sparkbar" data-color="#00a65a" data-height="20">
-                        0 Incorrect Data
+                      <?php
+                      if($valid)
+                      {
+                       echo ' 0 Incorrect Data ';
+                      }
+                      else{
+                        echo ' data not found ';
+                      }
+                      ?>
+                      
                       </div>
                     </td>
                   </tr>
@@ -88,47 +106,73 @@
                   </tr>
                   </thead>
                   <tbody>
-                  <?php echo '
-                  <tr>
+                  <?php 
+
+                  if($valid)
+                  {
+                    echo '
+                    <tr>
+                      <td>Nama </td>
+                      <td>: '.$data['Nama'].'</td>
+                    </tr>
+                    <tr>
+                      <td>Jenis Kelamin </td>
+                      <td>: '.$data['Jenis Kelamin'].'</td>
+                    </tr>
+                    <tr>
+                      <td>Perguruan Tinggi </td>
+                      <td>: '.$data['Perguruan Tinggi'].'</td>
+                    </tr>
+                    <tr>
+                      <td>Program Studi </td>
+                      <td>: '.$data['Program Studi'].'</td>
+                    </tr>
+                    <tr>
+                      <td>Nomor Induk Mahasiswa </td>
+                      <td>: '.$data['Nomor Induk Mahasiswa'].'</td>
+                    </tr>
+                    <tr>
+                      <td>Semester Awal </td>
+                      <td>: '.$data['Semester Awal'].'</td>
+                    </tr>
+                    <tr>
+                      <td>Status Awal Mahasiswa </td>
+                      <td>: '.$data['Status Awal Mahasiswa'].'</td>
+                    </tr>
+                    <tr>
+                      <td>Status Mahasiswa Saat ini </td>
+                      <td>: '.$data['Status Mahasiswa Saat ini'].'</td>
+                    </tr>
+                    <tr>
+                      <td>Tanggal Lulus </td>
+                      <td>: '.$data['Tanggal Lulus'].'</td>
+                    </tr>
+                    <tr>
+                      <td>Nomor Ijazah </td>
+                      <td>: '.$data['Nomor Ijazah'].'</td>
+                    </tr>';
+                  }
+                  else{
+                    echo '
+                    <tr>
                     <td>Nama </td>
-                    <td>: '.$data['Nama'].'</td>
-                  </tr>
-                  <tr>
-                    <td>Jenis Kelamin </td>
-                    <td>: '.$data['Jenis Kelamin'].'</td>
-                  </tr>
+                    <td>: '.$params['name'].'</td>
+                  </tr>  
                   <tr>
                     <td>Perguruan Tinggi </td>
-                    <td>: '.$data['Perguruan Tinggi'].'</td>
+                    <td>: '.$params['university'].'</td>
                   </tr>
                   <tr>
                     <td>Program Studi </td>
-                    <td>: '.$data['Program Studi'].'</td>
+                    <td>: '.$params['prodi'].'</td>
                   </tr>
                   <tr>
-                    <td>Nomor Induk Mahasiswa </td>
-                    <td>: '.$data['Nomor Induk Mahasiswa'].'</td>
+                    <td>Degree</td>
+                    <td>: '.$params['degree'].'</td>
                   </tr>
-                  <tr>
-                    <td>Semester Awal </td>
-                    <td>: '.$data['Semester Awal'].'</td>
-                  </tr>
-                  <tr>
-                    <td>Status Awal Mahasiswa </td>
-                    <td>: '.$data['Status Awal Mahasiswa'].'</td>
-                  </tr>
-                  <tr>
-                    <td>Status Mahasiswa Saat ini </td>
-                    <td>: '.$data['Status Mahasiswa Saat ini'].'</td>
-                  </tr>
-                  <tr>
-                    <td>Tanggal Lulus </td>
-                    <td>: '.$data['Tanggal Lulus'].'</td>
-                  </tr>
-                  <tr>
-                    <td>Nomor Ijazah </td>
-                    <td>: '.$data['Nomor Ijazah'].'</td>
-                  </tr>';
+            ';
+                  }
+                  
                   ?>
                   </tbody>
                 </table>
