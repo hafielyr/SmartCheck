@@ -28,7 +28,7 @@
           <!-- small box -->
           <div class="small-box bg-navy">
             <div class="inner">
-              <h3>2302</h3>
+              <h3>3</h3>
 
               <p>Candidates</p>
               <p>Junior Programmer recruitment 2018 b1</p>
@@ -36,7 +36,7 @@
             <div class="icon">
               <i class="ion ion-person-add"></i>
             </div>
-            <a href="checker/participantList" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="../index.php/participantList" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
       </div>
       <div class="col-lg-3 col-xs-6">
@@ -51,7 +51,7 @@
             <div class="icon">
               <i class="ion ion-person-add"></i>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="../index.php/participantList2" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
       </div>
       <div class="col-lg-3 col-xs-6">

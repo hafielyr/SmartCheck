@@ -34,10 +34,11 @@
         </a>
         <ul class="treeview-menu">
           <li><a href="../index.php/home"><i class="fa fa-circle-o"></i> Recruitments </a></li>
-          <li><a href="./checker/singleChecking"><i class="fa fa-circle-o"></i> Candidate </a></li>
+          <li><a href="../index.php/singleChecking"><i class="fa fa-circle-o"></i> Candidate </a></li>
           <li><a href="../index.php/socialMediaCheck"><i class="fa fa-circle-o"></i> Social Media Check </a></li>
           <li><a href="../index.php/eduCheck"><i class="fa fa-circle-o"></i> Education Check </a></li>
           <li><a href="../index.php/ltcriminalCheck"><i class="fa fa-circle-o"></i> Civil Litigation/Criminal Check </a></li>
+          <li><a href="../index.php/githubCheck"><i class="fa fa-circle-o"></i> Github Check </a></li>
         </ul>
       </li>
       <li>
@@ -159,7 +160,7 @@
           <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
         </ul>
       </li>
-      <li><a href="https://adminlte.io/docs"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
+      <li><a href="../index.php/settings"><i class="fa fa-gears"></i> <span>Settings</span></a></li>
       <li class="header">LABELS</li>
       <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
       <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>

@@ -32,6 +32,8 @@ class Checker extends CI_Controller {
 	}
 	public function ltcriminalCheck()
 	{
+
+		$applicant_name = $this->input->get('name');		
 		$params = array(
 			'name' =>  $applicant_name,
 		);
@@ -39,6 +41,7 @@ class Checker extends CI_Controller {
 		$url = service_url."/checkma?" . http_build_query($params);
 		$file = service_file_dir."/checkma_$applicant_name.json";
 		$data['data'] = $this->getData($file, $url, false);
+		$data['applicant_name'] = $applicant_name;
 
 		$this->load->view('admin/ltcriminal_checker', $data);
 	}
@@ -66,6 +69,7 @@ class Checker extends CI_Controller {
 
 	public function githubCheck()
 	{
+		$applicant_name = $this->input->get('username');		
 		$params = array(
 			'username' =>  $applicant_name,
 		);
@@ -73,7 +77,7 @@ class Checker extends CI_Controller {
 		$url = service_url."/checkgithub?" . http_build_query($params);
 		$file = service_file_dir."/checkgithub_$applicant_name.json";
 		$data['data'] = $this->getData($file, $url, false);		
-
+		$data['applicant_name'] = $applicant_name;		
 		$this->load->view('admin/github_checker', $data);
 	}	
 
@@ -97,6 +101,15 @@ class Checker extends CI_Controller {
 	public function participantList()
 	{
 		$this->load->view('admin/participant_list');
+	}
+	public function participantList2()
+	{
+		$this->load->view('admin/participant_list2');
+	}
+
+	public function settings()
+	{
+		$this->load->view('admin/settings_page');
 	}
 	public function singleChecking(){
     $this->load->view('admin/single_checking');

@@ -26,10 +26,7 @@
     <section class="content">
 
       <!-- Main row -->
-      <div class="row">
-        <?php $json = file_get_contents(__DIR__ . '/../../json/mendikbud.json');
-              $data = json_decode($json,true);
-        ?>
+      <div class="row">     
         <div class="col-md-8">
           <!-- TABLE: LATEST ORDERS -->
           <div class="box box-info">

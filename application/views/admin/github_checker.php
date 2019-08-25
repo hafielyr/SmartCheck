@@ -14,7 +14,7 @@
     <section class="content-header">
       <h1>
         Github Check
-        <small>applicant : Hahrul Bikmi </small>
+        <small>applicant : <?php echo $applicant_name ?> </small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -26,11 +26,7 @@
     <section class="content">
 
       <!-- Main row -->
-      <div class="row">
-        <?php $json = file_get_contents(__DIR__ . '/../../json/mendikbud.json');
-              $data = json_decode($json,true);
-        ?>
-
+      <div class="row">    
         <div class="col-md-8">
           <!-- TABLE: LATEST ORDERS -->
           <div class="box box-info">
@@ -50,99 +46,62 @@
                   <thead>
                   <tr>
                     <th>ID</th>
-                    <th>Checked Item</th>
-                    <th>Status</th>
-                    <th>Result</th>
+                    <th>Checked Item</th>                    
+                    <th>Followers</th>
+                    <th>Github Score</th>
+                    <th>Status</th>                                        
                   </tr>
                   </thead>
                   <tbody>
                   <tr>
                     <td><a href="pages/examples/invoice.html">EDU1147</a></td>
-                    <td>Ristekdikti </td>
-                    <td><span class="label label-success">checked</span></td>
+                    <td>Github.com </td>                    
+                    <td> <div class="sparkbar" data-color="#00a65a" data-height="20">
+                      <?php echo  $data['followers']?>
+                      </div> </td>   
                     <td>
                       <div class="sparkbar" data-color="#00a65a" data-height="20">
-                        0 Incorrect Data
+                      <?php echo  $data['score']?>
                       </div>
                     </td>
+                    <td><span class="label label-success">checked</span></td>
                   </tr>
                   </tbody>
                 </table>
               </div>
               <!-- /.table-responsive -->
+              <div style="margin: 10px;">
+            <img src=<?php echo base_url('contribution_hafielyr.png'); ?> width="687" height="193.5"  alt="Girl in a jacket">
+</div>
             </div>
             <!-- /.box-footer -->
+
           </div>
           <!-- /.box -->
         </div>
-        <!-- /.col -->
+        <!-- /.col -->        
 
-        <div class="col-md-8">
-          <!-- TABLE: LATEST ORDERS -->
-          <div class="box box-info">
-            <!-- /.box-header -->
-            <div class="box-body">
-              <div class="table-responsive">
-                <table class="table table-condensed">
-                  <thead>
-                  <tr>
-                    <th style="width: 200px">Ristekdikti</th>
-                    <th></th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  <?php echo '
-                  <tr>
-                    <td>Nama </td>
-                    <td>: '.$data['Nama'].'</td>
-                  </tr>
-                  <tr>
-                    <td>Jenis Kelamin </td>
-                    <td>: '.$data['Jenis Kelamin'].'</td>
-                  </tr>
-                  <tr>
-                    <td>Perguruan Tinggi </td>
-                    <td>: '.$data['Perguruan Tinggi'].'</td>
-                  </tr>
-                  <tr>
-                    <td>Program Studi </td>
-                    <td>: '.$data['Program Studi'].'</td>
-                  </tr>
-                  <tr>
-                    <td>Nomor Induk Mahasiswa </td>
-                    <td>: '.$data['Nomor Induk Mahasiswa'].'</td>
-                  </tr>
-                  <tr>
-                    <td>Semester Awal </td>
-                    <td>: '.$data['Semester Awal'].'</td>
-                  </tr>
-                  <tr>
-                    <td>Status Awal Mahasiswa </td>
-                    <td>: '.$data['Status Awal Mahasiswa'].'</td>
-                  </tr>
-                  <tr>
-                    <td>Status Mahasiswa Saat ini </td>
-                    <td>: '.$data['Status Mahasiswa Saat ini'].'</td>
-                  </tr>
-                  <tr>
-                    <td>Tanggal Lulus </td>
-                    <td>: '.$data['Tanggal Lulus'].'</td>
-                  </tr>
-                  <tr>
-                    <td>Nomor Ijazah </td>
-                    <td>: '.$data['Nomor Ijazah'].'</td>
-                  </tr>';
-                  ?>
-                  </tbody>
-                </table>
+        
+        <?php      foreach ($data['repositories'] as $row) {
+          echo '<div class="col-md-6">
+            <div class="nav-tabs-custom">
+              <ul class="nav nav-tabs pull-right">
+                <li class="pull-left header"></i> '.$row['name'].' ('.$row['language'] .')</li>
+              </ul>
+              <div class="tab-content">
+                <div class="tab-pane active" id="tab_1-1">
+                  <b>'.$row['watchers'].' stars</b><br>
+
+                  <tr><td>'.$row['description'].'</td></tr>
+
+                  <br><a href='.$row['url'].'><b>Github link</b></a>
               </div>
-              <!-- /.table-responsive -->
+              </div>
             </div>
-            <!-- /.box-footer -->
-          </div>
-          <!-- /.box -->
-        </div>
-
+          </div>';
+          } ?>
+          
+        
         </div>
         <!-- /.col -->
       </div>

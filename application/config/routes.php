@@ -57,6 +57,9 @@ $route['socialMediaCheck'] = 'admin/checker/socialMediaCheck';
 $route['eduCheck'] = 'admin/checker/eduCheck';
 $route['ltcriminalCheck'] = 'admin/checker/ltcriminalCheck';
 $route['githubCheck'] = 'admin/checker/githubcheck';
-$route['singleChecking'] = 'checker/singleChecking';
+$route['singleChecking'] = 'admin/checker/singleChecking';
+$route['participantList'] = 'admin/checker/participantList';
+$route['participantList2'] = 'admin/checker/participantList2';
+$route['settings'] = 'admin/checker/settings';
 
 

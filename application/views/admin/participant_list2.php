@@ -40,44 +40,28 @@
                   <tr>
                     <th>No</th>
                     <th>Name</th>
-                    <th>Social Media Check</th>
                     <th>Education Check</th>
                     <th>Criminal Check</th>
-                    <th>Github</th>
                     <th>Status</th>
                   </tr>
                   </thead>
                   <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>Resa Rayasya </td>
+                    <?php
+                  for ($x = 1; $x <= 200; $x++) {
+                    $rand = substr(md5(microtime()),rand(0,26),rand(6,8));
+                    $rand2 = substr(md5(microtime()),rand(0,26),rand(4,7));
+                    echo '
+                    <tr>
+                    <td>'.$x.'</td>
+                    <td>'.$rand.' '.$rand2.'</td>                    
                     <td><span class="label label-success">checked</span></td>
-                    <td><span class="label label-success">checked</span></td>
-                    <td><span class="label label-success">checked</span></td>
-                    <td><a class="label label-success" href="../index.php/githubCheck?username=hafielyr">checked</span></td>
-                    <td><span class="label label-success">passed</span></td>
+                    <td><span class="label label-success">checked</span></td>                                       
                     <td><span class="label label-primary">select</span></td>
                   </tr>
-                  <tr>
-                    <td>2</td>
-                    <td>Hahrul Bikmi </td>
-                    <td><a class="label label-warning" href="../index.php/socialMediaCheck">manual verification needed</span></td>
-                    <td><span class="label label-success">checked</span></td>
-                    <td><span class="label label-success">checked</span></td>
-                    <td><span class="label label-default">no account</span></td>
-                    <td><span class="label label-success">checked</span></td>
-                    <td><span class="label label-primary">select</span></td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td>Setya Novanto </td>
-                    <td><span class="label label-warning">manual verification needed</span></td>
-                    <td><span class="label label-success">checked</span></td>
-                    <td><a class="label label-danger" href="../index.php/ltcriminalCheck?name=setya+novanto">checked-fail</span></td>
-                    <td><span class="label label-default">no account</span></td>
-                    <td><span class="label label-danger" >failed</span></td>
-                    <td><span class="label label-primary">select</span></td>
-                  </tr>
+                    ';
+                  }
+                 
+                    ?>                 
                   </tbody>
                 </table>
               </div>
@@ -118,4 +102,5 @@
 <?php $this->load->view('admin/footer') ?>
 </body>
 </html>
+
 

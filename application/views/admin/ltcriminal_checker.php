@@ -14,7 +14,7 @@
     <section class="content-header">
       <h1>
         Civil Litigation or Criminal Check
-        <small>applicant : Hahrul Bikmi </small>
+        <small>applicant :<?php echo 'test' ?> </small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -26,10 +26,7 @@
     <section class="content">
 
       <!-- Main row -->
-      <div class="row">
-        <?php $json = file_get_contents(__DIR__ . '/../../json/mahkamah_agung.json');
-              $data = json_decode($json,true);
-        ?>
+      <div class="row">     
 
         <div class="col-md-8"
           <!-- TABLE: LATEST ORDERS -->
@@ -116,7 +113,7 @@
           echo '<div class="col-md-6">
             <div class="nav-tabs-custom">
               <ul class="nav nav-tabs pull-right">
-                <li class="pull-left header"></i> header</li>
+                <li class="pull-left header"></i> '.substr($row['header'],0,30).'...'.'</li>
               </ul>
               <div class="tab-content">
                 <div class="tab-pane active" id="tab_1-1">
