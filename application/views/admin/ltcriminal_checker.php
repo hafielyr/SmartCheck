@@ -27,7 +27,10 @@
 
       <!-- Main row -->
       <div class="row">
-        <!-- Left col -->
+        <?php $json = file_get_contents(__DIR__ . '/../../json/mahkamah_agung.json');
+              $data = json_decode($json,true);
+        ?>
+
         <div class="col-md-8"
           <!-- TABLE: LATEST ORDERS -->
           <div class="box box-info">
@@ -58,7 +61,11 @@
                     <td>Criminal Law</td>
                     <td><span class="label label-success">checked</span></td>
                     <td>
-                      <div class="sparkbar" data-color="#00a65a" data-height="20">0 record found</div>
+                      <div class="sparkbar" data-color="#00a65a" data-height="20">
+                        <?php
+                              echo $data['count'].' records found';
+                        ?>
+                      </div>
                     </td>
                   </tr>
                   <tr>
@@ -75,10 +82,6 @@
               </div>
               <!-- /.table-responsive -->
             </div>
-            <!-- /.box-body -->
-            <div class="box-footer clearfix">
-              <a href="javascript:void(0)" class="btn btn-sm btn-info btn-flat pull-left">Details</a>
-            </div>
             <!-- /.box-footer -->
           </div>
           <!-- /.box -->
@@ -91,14 +94,17 @@
 
             <div class="info-box-content">
               <span class="info-box-text">Criminality</span>
-              <span class="info-box-number">0</span>
+              <span class="info-box-number">
+                <?php
+                      echo $data['count'].' records found';
+                ?>
+              </span>
 
               <div class="progress">
-                <div class="progress-bar" style="width: 0%"></div>
+                <div class="progress-bar" style="width: <?php echo $data['count'].'%' ?>"></div>
               </div>
               <span class="progress-description">
-
-                  </span>
+              </span>
             </div>
             <!-- /.info-box-content -->
           </div>
@@ -106,6 +112,25 @@
           </div>
           <!-- /.info-box -->
 
+          <?php      foreach ($data['results'] as $row) {
+          echo '<div class="col-md-6">
+            <div class="nav-tabs-custom">
+              <ul class="nav nav-tabs pull-right">
+                <li class="pull-left header"></i> header</li>
+              </ul>
+              <div class="tab-content">
+                <div class="tab-pane active" id="tab_1-1">
+                  <b>Summary:</b><br>
+
+                  <tr><td>'.$row['summary'].'</td></tr>
+
+                  <br><a href='.$row['link'].'><b>Details</b></a>
+              </div>
+              </div>
+            </div>
+          </div>';
+          } ?>
+          
         </div>
         <!-- /.col -->
       </div>

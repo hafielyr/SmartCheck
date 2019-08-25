@@ -36,7 +36,7 @@
           <li><a href="index.html"><i class="fa fa-circle-o"></i> Jobs </a></li>
           <li><a href="index2.html"><i class="fa fa-circle-o"></i> Candidates </a></li>
           <li><a href="checker/socialMediaCheck"><i class="fa fa-circle-o"></i> Social Media Check </a></li>
-          <li><a href="index2.html"><i class="fa fa-circle-o"></i> Education Check </a></li>
+          <li><a href="checker/eduCheck"><i class="fa fa-circle-o"></i> Education Check </a></li>
           <li><a href="checker/ltcriminalCheck"><i class="fa fa-circle-o"></i> Civil Litigation/Criminal Check </a></li>
         </ul>
       </li>

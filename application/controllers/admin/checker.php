@@ -30,10 +30,12 @@ class Checker extends CI_Controller {
 	{
 		$this->load->view('admin/facebook_checker');
 	}
-
-
 	public function ltcriminalCheck()
 	{
 		$this->load->view('admin/ltcriminal_checker');
+	}
+	public function eduCheck()
+	{
+		$this->load->view('admin/edu_checker');
 	}
 }
