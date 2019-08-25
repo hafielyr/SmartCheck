@@ -13,12 +13,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Education Check
+        Github Check
         <small>applicant : Hahrul Bikmi </small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Education Check</li>
+        <li class="active">Github Check</li>
       </ol>
     </section>
 
@@ -27,7 +27,10 @@
 
       <!-- Main row -->
       <div class="row">
-        
+        <?php $json = file_get_contents(__DIR__ . '/../../json/mendikbud.json');
+              $data = json_decode($json,true);
+        ?>
+
         <div class="col-md-8">
           <!-- TABLE: LATEST ORDERS -->
           <div class="box box-info">

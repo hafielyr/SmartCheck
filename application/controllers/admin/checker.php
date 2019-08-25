@@ -34,8 +34,37 @@ class Checker extends CI_Controller {
 	{
 		$this->load->view('admin/ltcriminal_checker');
 	}
-	public function eduCheck()
+	public function eduCheck($userid)
 	{
-		$this->load->view('admin/edu_checker');
+		$userid = 'bahrulhikmi';
+		$params = array(
+			'name' => 'bahrul hikmi',
+			'university' => 'Universitas Andalas',
+			'degree' => 'S1',
+			'prodi' => 'Teknik Industri'
+		);
+
+		$url = service_url."/checkdikti?" . http_build_query($params);
+		$file = service_file_dir."/edu_$userid.json";
+		$data['data'] = $this->getData($file, $url, false);
+
+		$this->load->view('admin/edu_checker', $data);
+	}
+
+	public function getData($file, $url, $refresh)
+	{
+		if(file_exists($file) and !$refresh)
+		{
+			$json = file_get_contents($file);	
+		}
+		else{			
+			$json = file_get_contents($url);
+			$fp = fopen($file, 'w');
+			fwrite($fp, $json);
+			fclose($fp);
+			$json = file_get_contents($file);	
+		}
+
+		return json_decode($json,true);	
 	}
 }
