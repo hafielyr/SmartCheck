@@ -23,7 +23,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
+<<<<<<< HEAD
 $config['base_url'] = 'http://localhost/SmartCheck';
+=======
+$config['base_url'] = 'http://localhost:4343/smartcheck';
+>>>>>>> 3e89088573eff5808fdb880638a7099ac9f6da89
 
 /*
 |--------------------------------------------------------------------------

@@ -1,10 +1,9 @@
 <?php
 
+defined('BASEPATH') OR exit('No direct script access allowed');
 
 defined('service_url') OR define('service_url','http://localhost:5353');
 defined('service_file_dir') OR define('service_file_dir',APPPATH . '/json');
-
-defined('BASEPATH') OR exit('No direct script access allowed');
 
 /*
 |--------------------------------------------------------------------------
