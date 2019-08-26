@@ -69,6 +69,7 @@
               <i class="ion ion-person-add"></i>
             </div>
             <a href="#" class="small-box-footer">View <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="../index.php/settings" class="small-box-footer">Settings <i class="fa fa-gear"></i></a>
           </div>
       </div>
       <div class="col-lg-3 col-xs-6">
@@ -84,66 +85,7 @@
               <i class="ion ion-person-add"></i>
             </div>
             <a href="#" class="small-box-footer">View <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-      </div>
-      <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-navy">
-            <div class="inner">
-              <h3>122</h3>
-
-              <p>Candidates</p>
-              <p>recruitment junior consultant Jan 2019 </p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-person-add"></i>
-            </div>
-            <a href="#" class="small-box-footer">View <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-      </div>
-      <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-navy">
-            <div class="inner">
-              <h3>212</h3>
-
-              <p>Candidates</p>
-              <p>recruitment analyst programmer Feb 2019 </p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-person-add"></i>
-            </div>
-            <a href="#" class="small-box-footer">View <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-      </div>
-      <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-navy">
-            <div class="inner">
-              <h3>49</h3>
-
-              <p>Candidates</p>
-              <p>recruitment senior manager Feb 2019 </p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-person-add"></i>
-            </div>
-            <a href="#" class="small-box-footer">View <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-      </div>
-      <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-navy">
-            <div class="inner">
-              <h3>184</h3>
-
-              <p>Candidates</p>
-              <p>recruitment senior admin/HR Jul 2019 </p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-person-add"></i>
-            </div>
-            <a href="#" class="small-box-footer">View <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="../index.php/settings" class="small-box-footer">Settings <i class="fa fa-gear"></i></a>
           </div>
       </div>
       <!-- Main row -->
