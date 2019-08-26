@@ -33,7 +33,7 @@ class Checker extends CI_Controller {
 	public function ltcriminalCheck()
 	{
 
-		$applicant_name = $this->input->get('name');		
+		$applicant_name = $this->input->get('name');
 		$params = array(
 			'name' =>  $applicant_name,
 		);
@@ -47,14 +47,14 @@ class Checker extends CI_Controller {
 	}
 	public function eduCheck()
 	{
-		
-		$applicant_name = $this->input->get('name');		
+
+		$applicant_name = $this->input->get('name');
 		$params = array(
 			'name' =>  $applicant_name,
 			'university' =>  $this->input->get('university'),
 			'degree' => $this->input->get('degree'),
 			'prodi' => $this->input->get('prodi')
-		);		
+		);
 
 		$url = service_url."/checkdikti?" . http_build_query($params);
 		$file = service_file_dir."/checkdikti_$applicant_name.json";
@@ -69,17 +69,17 @@ class Checker extends CI_Controller {
 
 	public function githubCheck()
 	{
-		$applicant_name = $this->input->get('username');		
+		$applicant_name = $this->input->get('username');
 		$params = array(
 			'username' =>  $applicant_name,
 		);
 
 		$url = service_url."/checkgithub?" . http_build_query($params);
 		$file = service_file_dir."/checkgithub_$applicant_name.json";
-		$data['data'] = $this->getData($file, $url, false);		
-		$data['applicant_name'] = $applicant_name;		
+		$data['data'] = $this->getData($file, $url, false);
+		$data['applicant_name'] = $applicant_name;
 		$this->load->view('admin/github_checker', $data);
-	}	
+	}
 
 	public function getData($file, $url, $refresh)
 	{
@@ -87,9 +87,9 @@ class Checker extends CI_Controller {
 		{
 			$json = file_get_contents($file);
 		}
-		else{			
-			$json = file_get_contents($url);			
-			if (!(strpos($json, '"success": true') !== false))return array();			
+		else{
+			$json = file_get_contents($url);
+			if (!(strpos($json, '"success": true') !== false))return array();
 			$fp = fopen($file, 'w');
 			fwrite($fp, $json);
 			fclose($fp);
@@ -113,5 +113,8 @@ class Checker extends CI_Controller {
 	}
 	public function singleChecking(){
     $this->load->view('admin/single_checking');
+	}
+	public function singleCheckingResult(){
+    $this->load->view('admin/single_checking_result');
 	}
 }

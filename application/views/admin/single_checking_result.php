@@ -1,4 +1,3 @@
-test
 <!DOCTYPE html>
 <html>
 <?php $this->load->view('admin/head') ?>
@@ -14,12 +13,11 @@ test
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Education Check
-        <small>applicant : Hahrul Bikmi </small>
+        Single checking
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Education Check</li>
+        <li class="active">Single checking</li>
       </ol>
     </section>
 
@@ -28,6 +26,7 @@ test
 
       <!-- Main row -->
       <div class="row">
+        <!--twitter-->
         <?php
              $servername = "localhost";
              $username = "root";
@@ -41,8 +40,10 @@ test
               die("Connection failed: " . $conn->connect_error);
             }
 
-?>
+        ?>
         <?php
+        $var_value = $_GET['inputTwitter'];
+
         // keys and tokens
         $consumer_key = '0CMWq5J8RYC90BcRwdTWxxrPp';
         $consumer_secret = 'Fe7TPG8EjxX8wPV3iMY5lKHm5IYo90aQv5oeRX3pMopqrhYmwU';
@@ -58,8 +59,10 @@ test
         $content = $connection->get("account/verify_credentials");
 
         //Get tweets
-        $user= $connection->get("users/show",["screen_name"=>"bahrulhikmi"]);
-        $statuses = $connection->get("statuses/user_timeline",["screen_name"=>"bahrulhikmi","count"=>200,"include_rts"=>1,"tweet_mode"=>"extended","truncated"=>"false"]);
+        $user= $connection->get("users/show",["screen_name"=>$var_value]);
+        $statuses = $connection->get("statuses/user_timeline",["screen_name"=>$var_value,"count"=>200,"include_rts"=>1,"tweet_mode"=>"extended","truncated"=>"false"]);
+
+        if(!isset($statuses->errors)){
         $statuses_json = json_encode($statuses);
         //print_r($statuses_json);
         //print_r($user);
@@ -219,8 +222,10 @@ test
                <!-- /.info-box-content -->
            </div>
        </div>
-
+     <?php }?>
+        <!--/twitter-->
       </div>
+
       <!-- /.row -->
     </section>
     <!-- /.content -->

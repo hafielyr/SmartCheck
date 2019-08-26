@@ -32,35 +32,35 @@
           </div>
           <!-- /.box-header -->
           <!-- form start -->
-          <form role="form">
+          <form role="form" method="get" action="singleCheckingResult">
             <div class="box-body">
               <div class="form-group">
                 <label for="inputName">Name</label>
-                <input type="text" class="form-control" id="inputName" placeholder="Enter name">
+                <input type="text" class="form-control" name="inputName" id="inputName" placeholder="Enter name">
               </div>
               <div class="form-group">
                 <label for="inputUniversity">University</label>
-                <input type="text" class="form-control" id="inputUniversity" placeholder="Enter university">
+                <input type="text" class="form-control" name="inputUniversity" id="inputUniversity" placeholder="Enter university">
               </div>
               <div class="form-group">
                 <label for="inputDepartment">Department</label>
-                <input type="text" class="form-control" id="inputDepartment" placeholder="Enter Department">
+                <input type="text" class="form-control" name="inputDepartment" id="inputDepartment" placeholder="Enter Department">
               </div>
               <div class="form-group">
                 <label for="inputDegree">Degree</label>
-                <input type="text" class="form-control" id="inputDegree" placeholder="Enter Degree">
+                <input type="text" class="form-control" name="inputDegree" id="inputDegree" placeholder="Enter Degree">
               </div>
               <div class="form-group">
                 <label for="inputTwitter">Twitter</label>
-                <input type="text" class="form-control" id="inputTwitter" placeholder="Enter Twitter">
+                <input type="text" class="form-control" name="inputTwitter" id="inputTwitter" placeholder="Enter Twitter">
               </div>
               <div class="form-group">
                 <label for="inputFacebook">Facebook</label>
-                <input type="text" class="form-control" id="inputFacebook" placeholder="Enter Facebook">
+                <input type="text" class="form-control" name="inputFacebook" id="inputFacebook" placeholder="Enter Facebook">
               </div>
               <div class="form-group">
                 <label for="inputGithub">Github</label>
-                <input type="text" class="form-control" id="inputGithub" placeholder="Enter Github">
+                <input type="text" class="form-control" name="inputGithub" id="inputGithub" placeholder="Enter Github">
               </div>
             </div>
             <!-- /.box-body -->

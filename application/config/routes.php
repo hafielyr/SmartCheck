@@ -53,6 +53,9 @@ $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 $route['home'] = "admin/home";
+$route['singleCheckingResult'] = 'admin/checker/singleCheckingResult';
+$route['twitterCheck'] = 'admin/checker/twitterCheck';
+$route['facebookCheck'] = 'admin/checker/facebookCheck';
 $route['socialMediaCheck'] = 'admin/checker/socialMediaCheck';
 $route['eduCheck'] = 'admin/checker/eduCheck';
 $route['ltcriminalCheck'] = 'admin/checker/ltcriminalCheck';
@@ -61,5 +64,3 @@ $route['singleChecking'] = 'admin/checker/singleChecking';
 $route['participantList'] = 'admin/checker/participantList';
 $route['participantList2'] = 'admin/checker/participantList2';
 $route['settings'] = 'admin/checker/settings';
-
-
