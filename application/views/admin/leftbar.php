@@ -34,39 +34,12 @@
         </a>
         <ul class="treeview-menu">
           <li><a href="../index.php/home"><i class="fa fa-circle-o"></i> Recruitments </a></li>
-          <li><a href="../index.php/singleChecking"><i class="fa fa-circle-o"></i> Candidate </a></li>
-          <li><a href="../index.php/socialMediaCheck"><i class="fa fa-circle-o"></i> Social Media Check </a></li>
-          <li><a href="../index.php/eduCheck"><i class="fa fa-circle-o"></i> Education Check </a></li>
-          <li><a href="../index.php/ltcriminalCheck"><i class="fa fa-circle-o"></i> Civil Litigation/Criminal Check </a></li>
-          <li><a href="../index.php/githubCheck"><i class="fa fa-circle-o"></i> Github Check </a></li>
+          <li><a href="../index.php/singleChecking"><i class="fa fa-circle-o"></i> Candidate </a></li>      
         </ul>
-      </li>
-      <li>
-        <a href="pages/widgets.html">
-          <i class="fa fa-th"></i> <span>Widgets</span>
-          <span class="pull-right-container">
-            <small class="label pull-right bg-green">new</small>
-          </span>
-        </a>
-      </li>
+      </li>     
       <li class="treeview">
         <a href="#">
-          <i class="fa fa-pie-chart"></i>
-          <span>Charts</span>
-          <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
-          </span>
-        </a>
-        <ul class="treeview-menu">
-          <li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i> ChartJS</a></li>
-          <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Morris</a></li>
-          <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
-          <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>
-        </ul>
-      </li>
-      <li class="treeview">
-        <a href="#">
-          <i class="fa fa-edit"></i> <span>Forms</span>
+          <i class="fa fa-edit"></i> <span>Reports</span>
           <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
           </span>
@@ -79,14 +52,14 @@
       </li>
       <li class="treeview">
         <a href="#">
-          <i class="fa fa-table"></i> <span>Tables</span>
+          <i class="fa fa-table"></i> <span>Integrations</span>
           <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
           </span>
         </a>
         <ul class="treeview-menu">
-          <li><a href="pages/tables/simple.html"><i class="fa fa-circle-o"></i> Simple tables</a></li>
-          <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> Data tables</a></li>
+          <li><a href="pages/tables/simple.html"><i class="fa fa-circle-o"></i>Mitrais Online Recruitment</a></li>
+          <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i>API</a></li>
         </ul>
       </li>
       <li>

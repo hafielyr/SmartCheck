@@ -56,6 +56,7 @@
                     <td>'.$rand.' '.$rand2.'</td>                    
                     <td><span class="label label-success">checked</span></td>
                     <td><span class="label label-success">checked</span></td>                                       
+                    <td><span class="label label-success">valid-education</span></td>    
                     <td><span class="label label-primary">select</span></td>
                   </tr>
                     ';
@@ -80,8 +81,7 @@
               <!-- /.box-tools -->
             </div>
             <!-- /.box-header -->
-            <div class="box-body">
-            <a href="socialMediaCheck"><b>Social Media Check : </b>10 grey records <br><a/>
+            <div class="box-body">            
             <a href="eduCheck"><b>Education Check : </b>1 grey record <br></a>
             <a href="ltcriminalCheck"><b>Criminality Check : </b> grey record <br></a>
             </div>

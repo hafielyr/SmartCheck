@@ -64,3 +64,4 @@ $route['singleChecking'] = 'admin/checker/singleChecking';
 $route['participantList'] = 'admin/checker/participantList';
 $route['participantList2'] = 'admin/checker/participantList2';
 $route['settings'] = 'admin/checker/settings';
+$route['settings2'] = 'admin/checker/settings2';

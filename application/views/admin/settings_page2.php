@@ -16,7 +16,7 @@
         Settings        
       </h1>
       <h4>
-      Junior Programmer recruitment 2018 b1
+      Massive Junior Programmer recruitment 2020
       </h4>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -63,7 +63,7 @@
 
             <div class="info-box-content">
               <span class="info-box-number">Twitter</span>
-              <span class="info-box-text label label-success">Enabled</span>
+              <span class="info-box-text label label-success">Disabled</span>
               
             </div>
             <!-- /.info-box-content -->
@@ -82,7 +82,7 @@
 
             <div class="info-box-content">
               <span class="info-box-number">Facebook</span>
-              <span class="info-box-text label label-success">Enabled </span>
+              <span class="info-box-text label label-success">Disabled </span>
             </div>
             <!-- /.info-box-content -->
           </a>
@@ -171,35 +171,6 @@
           </div>
           <!-- /.info-box -->
         </div>
-
-        <div class="col-md-3 col-sm-6 col-xs-12">
-          <div class="info-box">
-            <span class="info-box-icon bg-black"><i class="fa fa-clipboard"></i></span>
-
-            <div class="info-box-content">
-              <span class="info-box-number">Oracle Certification</span>
-              <span class="info-box-text label label-default">Disabled</span>
-              
-            </div>
-            <!-- /.info-box-content -->
-          </div>
-          <!-- /.info-box -->
-        </div>
-
-        <div class="col-md-3 col-sm-6 col-xs-12">
-          <div class="info-box">
-            <span class="info-box-icon bg-black"><i class="fa fa-clipboard"></i></span>
-
-            <div class="info-box-content">
-              <span class="info-box-number">Microsoft Certification</span>
-              <span class="info-box-text label label-default">Disabled</span>
-              
-            </div>
-            <!-- /.info-box-content -->
-          </div>
-          <!-- /.info-box -->
-        </div>
-
       </div>
 
       <!-- /.row -->
@@ -234,104 +205,36 @@
                   </thead>
                   <tbody>
                   <tr>
-                    <td><a href="pages/examples/invoice.html">Github Stars</a></td>
-                    <td>Greater than</td>
-                    <td>20</td>
+                    <td><a href="pages/examples/invoice.html">Education Deatils</a></td>
+                    <td>Is Valid</td>
+                    <td></td>
                     <td>
-                      <div class="sparkbar" data-color="#00a65a" data-height="20">+5</div>
+                      <div class="sparkbar" data-color="#00a65a" data-height="20"></div>
                     </td>  
                     <td>
-                      <div class="sparkbar" data-color="#00a65a" data-height="20"> <span class="label label-success">good-repo</span>  <span class="label label-success">github-user</span></div>
+                      <div class="sparkbar" data-color="#00a65a" data-height="20"> <span class="label label-success">valid-education</span> </div>
                     </td>                  
                   </tr>
-                  <tr>
-                    <td><a href="pages/examples/invoice.html">Github Contribution Last Year</a></td>
-                    <td>Greater than</td>
-                    <td>20</td>
-                    <td>
-                      <div class="sparkbar" data-color="#00a65a" data-height="20">+40</div>
-                    </td>  
-                    <td>
-                      <div class="sparkbar" data-color="#00a65a" data-height="20"> </div>
-                    </td>                  
-                  </tr>
-                  <tr>
-                    <td><a href="pages/examples/invoice.html">Github Followers</a></td>
-                    <td>Greater than</td>
-                    <td>100</td>
-                    <td>
-                      <div class="sparkbar" data-color="#00a65a" data-height="20">+20</div>
-                    </td>  
-                    <td>
-                      <div class="sparkbar" data-color="#00a65a" data-height="20"> <span class="label label-success">github-famous</span>  <span class="label label-success">github-user</span></div>
-                    </td>                  
-                  </tr>
-                  <tr>
-                    <td><a href="pages/examples/invoice.html">Social Media - Negativity</a></td>
-                    <td>Greater than</td>
-                    <td>20</td>
-                    <td>
-                      <div class="sparkbar" data-color="#00a65a" data-height="20">-20</div>
-                    </td>  
-                    <td>
-                      <div class="sparkbar" data-color="#00a65a" data-height="20"> <span class="label label-warning">check-socialmedia</span>  <span class="label label-warning">negativity {0}</span></div>
-                    </td>                  
-                  </tr>
-                  
                   <tr>
                     <td><a href="pages/examples/invoice.html">Criminal Record</a></td>
                     <td>Exists</td>
-                    <td>NA</td>
+                    <td></td>
                     <td>
-                      <div class="sparkbar" data-color="#00a65a" data-height="20">-20</div>
+                      <div class="sparkbar" data-color="#00a65a" data-height="20"></div>
                     </td>  
                     <td>
-                      <div class="sparkbar" data-color="#00a65a" data-height="20"> <span class="label label-danger">criminal-record</span></div>
+                      <div class="sparkbar" data-color="#00a65a" data-height="20"> <span class="label label-warning">criminal-record{0}</span> </div>
                     </td>                  
-                  </tr>
-
-                  <tr>
-                    <td><a href="pages/examples/invoice.html">Education Details</a></td>
-                    <td>Is Valid</td>
-                    <td>NA</td>
-                    <td>
-                      <div class="sparkbar" data-color="#00a65a" data-height="20">-20</div>
-                    </td>  
-                    <td>
-                      <div class="sparkbar" data-color="#00a65a" data-height="20"> <span class="label label-danger">failed</span></div>
-                    </td>                  
-                  </tr>
-
-                  <tr>
-                    <td><a href="pages/examples/invoice.html">Education - Classification</a></td>
-                    <td>IS NOT</td>
-                    <td>IT Related</td>
-                    <td>
-                      <div class="sparkbar" data-color="#00a65a" data-height="20">-10</div>
-                    </td>  
-                    <td>
-                      <div class="sparkbar" data-color="#00a65a" data-height="20"> <span class="label label-warning">non-it-education</span></div>
-                    </td>                  
-                  </tr>
-
-                  <tr>
-                    <td><a href="pages/examples/invoice.html">Education - Degree</a></td>
-                    <td>IS</td>
-                    <td>S2</td>
-                    <td>
-                      <div class="sparkbar" data-color="#00a65a" data-height="20">+40</div>
-                    </td>  
-                    <td>
-                      <div class="sparkbar" data-color="#00a65a" data-height="20"> <span class="label label-success">S2</span></div>
-                    </td>                  
-                  </tr>
-
+                  </tr>              
                   </tbody>
                 </table>
               </div>
               <!-- /.table-responsive -->
             </div>
-              <a href="javascript:void(0)" class="btn btn-sm btn-default btn-flat pull-right">Edit</a>
+            <!-- /.box-body -->
+            <div class="box-footer clearfix">
+              <a href="javascript:void(0)" class="btn btn-sm btn-default btn-flat pull-right"> Edit </a>
+              
               <a href="javascript:void(0)" class="btn btn-sm btn-primary btn-flat pull-right">Smart Generate</a>
             </div>
             <!-- /.box-footer -->
