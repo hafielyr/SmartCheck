@@ -111,6 +111,12 @@ class Checker extends CI_Controller {
 	{
 		$this->load->view('admin/settings_page');
 	}
+
+	public function settings2()
+	{
+		$this->load->view('admin/settings_page2');
+	}
+
 	public function singleChecking(){
     $this->load->view('admin/single_checking');
 	}
