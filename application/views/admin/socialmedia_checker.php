@@ -45,8 +45,6 @@
 
             <div class="info-box-content">
               <span class="info-box-number">Twitter</span>
-              <span class="info-box-text">4 tweets </span>
-              <span class="info-box-text">2 retweets </span>
             </div>
             <!-- /.info-box-content -->
             </a>
@@ -71,45 +69,7 @@
           </div>
           <!-- /.info-box -->
         </div>
-        <!-- /.col -->
-        <div class="col-md-3 col-sm-6 col-xs-12">
-          <div class="info-box">
-            <span class="info-box-icon bg-aqua"><i class="fa fa-linkedin"></i></span>
 
-            <div class="info-box-content">
-              <span class="info-box-number">Linkedin</span>
-              <span class="info-box-text"></span>
-            </div>
-            <!-- /.info-box-content -->
-          </div>
-          <!-- /.info-box -->
-        </div>
-        <!-- /.col -->
-        <div class="col-md-3 col-sm-6 col-xs-12">
-          <div class="info-box">
-            <span class="info-box-icon bg-red"><i class="fa fa-quora"></i></span>
-
-            <div class="info-box-content">
-              <span class="info-box-number">Quora</span>
-              <span class="info-box-number"></span>
-            </div>
-            <!-- /.info-box-content -->
-          </div>
-          <!-- /.info-box -->
-        </div>
-        <!-- /.col -->
-        <div class="col-md-3 col-sm-6 col-xs-12">
-          <div class="info-box">
-            <span class="info-box-icon bg-grey"><i class="fa fa-stack-overflow"></i></span>
-
-            <div class="info-box-content">
-              <span class="info-box-number">Stack Overflow</span>
-              <span class="info-box-text">1 answer</span>
-            </div>
-            <!-- /.info-box-content -->
-          </div>
-          <!-- /.info-box -->
-        </div>
         <!-- /.col -->
         <div class="col-md-3 col-sm-6 col-xs-12">
           <div class="info-box">
@@ -123,19 +83,7 @@
           </div>
           <!-- /.info-box -->
         </div>
-        <!-- /.col -->
-        <div class="col-md-3 col-sm-6 col-xs-12">
-          <div class="info-box">
-            <span class="info-box-icon bg-black"><i class="fa fa-medium"></i></span>
 
-            <div class="info-box-content">
-              <span class="info-box-number">Medium</span>
-              <span class="info-box-text"></span>
-            </div>
-            <!-- /.info-box-content -->
-          </div>
-          <!-- /.info-box -->
-        </div>
       </div>
 
       <!-- Main row -->
