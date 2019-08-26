@@ -171,11 +171,15 @@
 
            echo '<tr>
            <td>'.$value->retweeted_status->full_text.'</td>
+           <td><span class="label label-danger" >Flag</span></td>
+           <td><span class="label label-success" >Ignore</span></td>
            </tr>';
          }
           else {
             echo '<tr>
             <td>'.$value->full_text.'</td>
+            <td><span class="label label-danger" >Flag</span></td>
+            <td><span class="label label-success" >Ignore</span></td>
             </tr>';
           }
         }
