@@ -68,9 +68,14 @@ test
         <div class="col-md-8">
           <!-- Widget: user widget style 1 -->
           <div class="box box-widget widget-user" >
-            <!-- Add the bg color to the header using any of the bg-* classes -->
-            <div class="widget-user-header bg-black" style="background: url('.$user->profile_banner_url.') center center;">
-              <h3 class="widget-user-username">'.$user->screen_name.'</h3>
+          <!-- Add the bg color to the header using any of the bg-* classes -->';
+          if (property_exists($user,'profile_banner_url')){
+          echo '<div class="widget-user-header bg-black" style="background: url('.$user->profile_banner_url.') center center;">';
+          }
+          else {
+            echo '<div class="widget-user-header bg-black" style="background: black center center;">';
+          }
+          echo ' <h3 class="widget-user-username">'.$user->screen_name.'</h3>
               <h5 class="widget-user-desc">'.$user->name.'</h5>
             </div>
             <div class="widget-user-image">
@@ -219,6 +224,26 @@ test
                <!-- /.info-box-content -->
            </div>
        </div>
+
+      <!-- machine learning prototype -->
+      <div class="col-md-4">
+          <div class="box box-solid">
+            <div class="box-header">
+              <h3 class="box-title text-warning">Interests</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-refresh"></i></button>
+              </div>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body text-center">
+              <div class="sparkline" data-type="bar" data-width="97%" data-height="100px" data-bar-width="14" data-bar-spacing="7" data-bar-color="#f39c12"><canvas width="224" height="100" style="display: inline-block; width: 224px; height: 100px; vertical-align: top;"></canvas></div>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+      <!-- /machine learning prototype -->
 
       </div>
       <!-- /.row -->

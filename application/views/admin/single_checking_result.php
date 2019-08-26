@@ -71,9 +71,14 @@
         <div class="col-md-8">
           <!-- Widget: user widget style 1 -->
           <div class="box box-widget widget-user" >
-            <!-- Add the bg color to the header using any of the bg-* classes -->
-            <div class="widget-user-header bg-black" style="background: url('.$user->profile_banner_url.') center center;">
-              <h3 class="widget-user-username">'.$user->screen_name.'</h3>
+            <!-- Add the bg color to the header using any of the bg-* classes -->';
+            if (property_exists($user,'profile_banner_url')){
+            echo '<div class="widget-user-header bg-black" style="background: url('.$user->profile_banner_url.') center center;">';
+            }
+            else {
+              echo '<div class="widget-user-header bg-black" style="background: black center center;">';
+            }
+            echo ' <h3 class="widget-user-username">'.$user->screen_name.'</h3>
               <h5 class="widget-user-desc">'.$user->name.'</h5>
             </div>
             <div class="widget-user-image">
