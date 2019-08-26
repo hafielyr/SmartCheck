@@ -56,6 +56,7 @@
 
         // connect to API
         $connection = new TwitterOAuth($consumer_key, $consumer_secret, $access_token, $access_token_secret);
+        $connection->setTimeouts(100, 150);
         $content = $connection->get("account/verify_credentials");
 
         //Get tweets

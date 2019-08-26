@@ -55,6 +55,7 @@ test
 
         // connect to API
         $connection = new TwitterOAuth($consumer_key, $consumer_secret, $access_token, $access_token_secret);
+        $connection->setTimeouts(100, 150);
         $content = $connection->get("account/verify_credentials");
 
         //Get tweets
@@ -167,11 +168,15 @@ test
 
            echo '<tr>
            <td>'.$value->retweeted_status->full_text.'</td>
+           <td><span class="label label-success" >Flag</span></td>
+           <td><span class="label label-danger" >Ignore</span></td>
            </tr>';
          }
           else {
             echo '<tr>
             <td>'.$value->full_text.'</td>
+            <td><span class="label label-success" >Flag</span></td>
+            <td><span class="label label-danger" >Ignore</span></td>
             </tr>';
           }
         }
